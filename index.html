@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greendora.sk</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Greendora.sk</title>
 </head>
 <body>
-    <!-- 1. Horný pás s logom a záložkami -->
-    <header>
+    <!-- Horný pás -->
+    <header class="top-bar">
         <div class="logo">Greendora.sk</div>
         <nav>
-            <a href="#home">Domov</a>
-            <a href="#contact">Kontakt</a>
+            <ul>
+                <li><a href="#">Domov</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- 2. Hero obrázok -->
+    <!-- Hero sekcia -->
     <section id="hero">
         <div class="hero-content">
             <h1>Udržateľné riešenia pre váš život</h1>
@@ -24,21 +26,26 @@
         </div>
     </section>
 
-    <!-- 3. Štyri typy produktov -->
-    <section id="categories">
-        <div class="category">
+    <!-- Biela sekcia medzi hero a produktmi -->
+    <div class="separator">
+        <p>Udržateľné riešenia pre váš život • Objavte naše ekologické produkty</p>
+    </div>
+
+    <!-- Produkty -->
+    <section class="products">
+        <div class="product">
             <img src="assets/images/bamboo.jpg" alt="Bambusové výrobky">
             <h3>Bambusové výrobky</h3>
         </div>
-        <div class="category">
+        <div class="product">
             <img src="assets/images/bottles.jpg" alt="Sklenené fľaše">
             <h3>Sklenené fľaše</h3>
         </div>
-        <div class="category">
+        <div class="product">
             <img src="assets/images/toys.jpg" alt="Drevené hračky">
             <h3>Drevené hračky</h3>
         </div>
-        <div class="category">
+        <div class="product">
             <img src="assets/images/wax.jpg" alt="Výrobky z včelieho vosku">
             <h3>Výrobky z včelieho vosku</h3>
         </div>
