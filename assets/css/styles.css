@@ -9,7 +9,7 @@ body {
 
 /* Hero sekcia */
 #hero {
-    height: 60vh; /* Hero obrázok na 60% výšky obrazovky */
+    height: 36vh; /* Hero obrázok na 36% výšky obrazovky */
     background: url('../images/hero.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
@@ -34,28 +34,18 @@ body {
     font-size: 1.2rem;
 }
 
-/* Oddelovací pásik */
-#divider {
-    background-color: #6db872;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 /* Produktové kategórie */
 #categories {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 3cm; /* Medzera medzi obrázkami */
     padding: 20px;
     background-color: #fff;
 }
 
 .category {
-    width: 325px; /* Zvýšená šírka o 30% */
+    width: 350px; /* Zvýšená šírka pre lepšiu čitateľnosť */
     text-align: center;
     background: #f9f9f9;
     padding: 15px;
