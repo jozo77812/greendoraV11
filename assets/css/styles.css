@@ -1,13 +1,39 @@
-/* Hero sekcia */
+/* 1. Horný pás */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #6f9f77;
+    color: white;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* 2. Hero obrázok */
 #hero {
-    height: 60vh; /* Výška hero obrázka */
+    height: 50vh;
     background: url('../images/hero.jpg') no-repeat center center;
-    background-size: contain; /* Zobrazenie celého obrázka */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 #hero .hero-content {
@@ -23,4 +49,34 @@
 
 #hero p {
     font-size: 1.2rem;
+}
+
+/* 3. Produktové kategórie */
+#categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.category {
+    width: 200px;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.category h3 {
+    font-size: 1.2rem;
+    color: #333;
 }
