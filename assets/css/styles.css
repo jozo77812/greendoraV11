@@ -19,6 +19,12 @@ body {
     color: white;
 }
 
+#hero .hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 #hero h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -26,6 +32,16 @@ body {
 
 #hero p {
     font-size: 1.2rem;
+}
+
+/* Oddelovací pásik */
+#divider {
+    background-color: #6db872;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 /* Produktové kategórie */
@@ -39,7 +55,7 @@ body {
 }
 
 .category {
-    width: 200px;
+    width: 325px; /* Zvýšená šírka o 30% */
     text-align: center;
     background: #f9f9f9;
     padding: 15px;
