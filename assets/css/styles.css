@@ -26,9 +26,9 @@ header nav a:hover {
 
 /* 2. Hero obrázok */
 #hero {
-    height: 50vh;
-    background: url('../images/hero.jpg') no-repeat center center;
-    background-size: cover;
+    height: 100vh; /* Celá výška obrazovky */
+    background: url('../images/hero.jpg') no-repeat center center; /* Zarovnanie obrázka */
+    background-size: contain; /* Prispôsobenie celého obrázka */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ header nav a:hover {
 }
 
 #hero .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Tmavé pozadie pre text */
     padding: 20px;
     border-radius: 10px;
 }
@@ -50,6 +50,7 @@ header nav a:hover {
 #hero p {
     font-size: 1.2rem;
 }
+
 
 /* 3. Produktové kategórie */
 #categories {
