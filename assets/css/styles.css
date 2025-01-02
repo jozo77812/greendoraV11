@@ -39,7 +39,7 @@ body {
 /* Hero obrázok */
 .hero-container {
     position: relative;
-    height: 50vh;
+    height: 100vh;
     overflow: hidden;
 }
 
