@@ -1,5 +1,7 @@
+// Pole na ukladanie položiek v košíku
 let cart = [];
 
+// Funkcia na pridanie položky do košíka
 function addToCart(name, price) {
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
@@ -10,6 +12,7 @@ function addToCart(name, price) {
     renderCart();
 }
 
+// Funkcia na vykreslenie košíka
 function renderCart() {
     const cartItemsContainer = document.querySelector('.cart-items');
     const totalPriceElement = document.getElementById('total-price');
@@ -21,7 +24,7 @@ function renderCart() {
         itemDiv.classList.add('cart-item');
         itemDiv.innerHTML = `
             <h3>${item.name}</h3>
-            <p>Cena: ${item.price.toFixed(2)} EUR</p>
+            <p>Cena za kus: ${item.price.toFixed(2)} EUR</p>
             <div class="quantity-controls">
                 <button class="decrease-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
                 <span>${item.quantity}</span>
@@ -36,6 +39,7 @@ function renderCart() {
     totalPriceElement.textContent = `${total.toFixed(2)} EUR`;
 }
 
+// Funkcia na aktualizáciu množstva položky
 function updateQuantity(name, change) {
     const item = cart.find(i => i.name === name);
     if (item) {
@@ -47,4 +51,5 @@ function updateQuantity(name, change) {
     renderCart();
 }
 
+// Pridať udalosť pre načítanie stránky
 document.addEventListener('DOMContentLoaded', renderCart);
