@@ -1,3 +1,68 @@
+/* Globálny štýl */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Horný pás */
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin: 0;
+    color: green;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    color: green;
+}
+
+/* Hero obrázok */
+.hero-container {
+    position: relative;
+    height: 50vh; /* Nastavenie na 50 % výšky obrazovky */
+    overflow: hidden;
+}
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Biely pás s textom */
+.hero-text-bar {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text-bar p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
 /* Produkty */
 .products {
     padding: 20px;
@@ -13,8 +78,8 @@
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 produkty vedľa seba */
-    column-gap: 30px; /* 3 cm medzera medzi stĺpcami */
-    row-gap: 30px; /* 3 cm medzera medzi riadkami */
+    gap: 30px; /* Medzera medzi produktami */
+    justify-content: space-evenly; /* Rovnomerné rozloženie produktov */
 }
 
 .product {
