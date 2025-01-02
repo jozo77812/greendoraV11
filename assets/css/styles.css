@@ -1,40 +1,114 @@
-.related-items {
-    margin: 40px 0;
+/* Globálny štýl */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Horný pás */
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin: 0;
+    color: green;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    color: green;
+}
+
+/* Hero obrázok */
+.hero-container {
+    position: relative;
+    height: 50vh; /* Upravte podľa potreby */
+    overflow: hidden;
+}
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Produkty */
+.products {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section-title {
     text-align: center;
-}
-
-.related-items h2 {
-    font-size: 24px;
     margin-bottom: 20px;
+    color: green;
 }
 
-.item-grid {
+.product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
-    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.item h3 {
-    font-size: 18px;
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.item .price {
-    font-size: 16px;
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-title {
+    font-weight: bold;
+    color: green;
+}
+
+.product-price {
     color: green;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
-.item .add-to-cart {
+.add-to-cart {
     background-color: #4caf50;
     color: white;
     border: none;
@@ -43,6 +117,6 @@
     cursor: pointer;
 }
 
-.item .add-to-cart:hover {
+.add-to-cart:hover {
     background-color: #45a049;
 }
