@@ -17,13 +17,46 @@
 
     <div class="product-detail">
         <h2 id="product-name">Názov produktu</h2>
-        <img id="product-image" src="assets/images/default.jpg" alt="Produkt" class="product-image">
+        <p id="product-description">Popis produktu sa zobrazí tu.</p>
         <p id="product-price" class="product-price">Cena: 20 EUR</p>
-        <p id="product-description">Toto je detail produktu.</p>
-        <label for="quantity">Množstvo:</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-        <button id="add-to-cart">Pridať do košíka</button>
     </div>
+
+    <!-- Sekcia položiek -->
+    <section class="related-items">
+        <h2>Ďalšie položky</h2>
+        <div class="item-grid">
+            <div class="item">
+                <h3>Položka 1</h3>
+                <p class="price">10.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+            <div class="item">
+                <h3>Položka 2</h3>
+                <p class="price">15.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+            <div class="item">
+                <h3>Položka 3</h3>
+                <p class="price">20.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+            <div class="item">
+                <h3>Položka 4</h3>
+                <p class="price">25.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+            <div class="item">
+                <h3>Položka 5</h3>
+                <p class="price">30.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+            <div class="item">
+                <h3>Položka 6</h3>
+                <p class="price">35.00 EUR</p>
+                <button class="add-to-cart">Pridať do košíka</button>
+            </div>
+        </div>
+    </section>
 
     <script>
         const queryString = window.location.search;
@@ -33,72 +66,32 @@
         const productDetails = {
             bamboo: {
                 name: 'Bambusové produkty',
-                image: 'assets/images/bamboo.jpg',
-                price: '10 EUR',
-                description: 'Ekologické bambusové produkty pre každodenné použitie.'
+                description: 'Ekologické bambusové produkty pre každodenné použitie.',
+                price: '20 EUR'
             },
             bottles: {
                 name: 'Sklenené fľaše',
-                image: 'assets/images/bottles.jpg',
-                price: '15 EUR',
-                description: 'Štýlové sklenené fľaše na vodu a nápoje.'
+                description: 'Štýlové sklenené fľaše na vodu a nápoje.',
+                price: '25 EUR'
             },
             toys: {
                 name: 'Drevené hračky',
-                image: 'assets/images/toys.jpg',
-                price: '25 EUR',
-                description: 'Bezpečné a ekologické drevené hračky pre deti.'
+                description: 'Bezpečné a ekologické drevené hračky pre deti.',
+                price: '30 EUR'
             },
             beeswax: {
                 name: 'Výrobky z včelieho vosku',
-                image: 'assets/images/beeswax.jpg',
-                price: '20 EUR',
-                description: 'Prírodné výrobky z včelieho vosku.'
+                description: 'Prírodné výrobky z včelieho vosku.',
+                price: '15 EUR'
             }
         };
 
         if (product && productDetails[product]) {
             const details = productDetails[product];
             document.getElementById('product-name').innerText = details.name;
-            document.getElementById('product-image').src = details.image;
-            document.getElementById('product-price').innerText = `Cena: ${details.price}`;
             document.getElementById('product-description').innerText = details.description;
+            document.getElementById('product-price').innerText = `Cena: ${details.price}`;
         }
     </script>
 </body>
 </html>
-<section class="related-items">
-  <h2>Ďalšie položky</h2>
-  <div class="item-grid">
-    <div class="item">
-      <h3>Položka 1</h3>
-      <p class="price">10.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-    <div class="item">
-      <h3>Položka 2</h3>
-      <p class="price">15.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-    <div class="item">
-      <h3>Položka 3</h3>
-      <p class="price">20.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-    <div class="item">
-      <h3>Položka 4</h3>
-      <p class="price">25.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-    <div class="item">
-      <h3>Položka 5</h3>
-      <p class="price">30.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-    <div class="item">
-      <h3>Položka 6</h3>
-      <p class="price">35.00 EUR</p>
-      <button class="add-to-cart">Pridať do košíka</button>
-    </div>
-  </div>
-</section>
