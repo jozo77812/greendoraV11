@@ -28,3 +28,9 @@ document.querySelectorAll('.wishlist-btn').forEach(button => {
         }
     });
 });
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Produkt bol pridaný do košíka.');
+    });
+});
