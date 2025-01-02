@@ -53,15 +53,15 @@ body {
 .hero-text-bar {
     background-color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text-bar p {
     margin: 0;
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 14px; /* Zmenšenie veľkosti písma */
     color: #333;
+    white-space: nowrap; /* Text zostane v jednom riadku */
 }
 
 /* Produkty */
@@ -78,8 +78,9 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 produkty vedľa seba */
     gap: 30px; /* Medzera medzi produktami */
+    justify-content: center; /* Vyrovnanie produktov */
 }
 
 .product {
