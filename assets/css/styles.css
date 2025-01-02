@@ -39,7 +39,7 @@ body {
 /* Hero obrázok */
 .hero-container {
     position: relative;
-    height: 50vh;
+    height: 50vh; /* Nastavenie na 50 % výšky obrazovky */
     overflow: hidden;
 }
 
@@ -59,9 +59,8 @@ body {
 
 .hero-text-bar p {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px; /* Zachovanie mierne väčšieho písma */
     color: #333;
-    white-space: nowrap;
 }
 
 /* Produkty */
@@ -78,7 +77,7 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 produkty vedľa seba */
+    grid-template-columns: repeat(4, 1fr); /* 4 produkty vedľa seba */
     gap: 30px; /* Medzera medzi produktami */
 }
 
@@ -97,55 +96,11 @@ body {
 }
 
 .product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Zvýraznenie */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Jemný tieň */
 }
 
 .product-title {
     font-weight: bold;
     color: green;
-}
-
-/* Sekcia položiek (detail produktu) */
-.item-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 položky vedľa seba */
-    gap: 30px; /* Medzera medzi položkami */
-    margin: 20px auto;
-    max-width: 1200px;
-}
-
-.item {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.price {
-    font-size: 16px;
-    font-weight: bold;
-    color: green;
-    margin: 10px 0;
-}
-
-.add-to-cart {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: #45a049;
 }
