@@ -34,14 +34,15 @@ body {
 }
 
 /* Hero obrázok */
-.hero {
+.hero-container {
     position: relative;
-    text-align: center;
+    height: 40vh; /* Menšia výška hero obrázku */
+    overflow: hidden;
 }
 
-.hero img {
+.hero-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -56,32 +57,22 @@ body {
     border-radius: 10px;
 }
 
-/* Filter */
-.filter-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.filter-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background: green;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.filter-btn:hover {
-    background: darkgreen;
-}
-
-/* Produkty */
+/* Sekcia produktov */
 .products {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: green;
+}
+
+.product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 20px;
 }
 
 .product {
@@ -92,25 +83,18 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .product img {
     max-width: 100%;
     border-radius: 10px;
 }
 
-.wishlist-btn {
-    padding: 10px;
-    margin-top: 10px;
-    background: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.wishlist-btn:hover {
-    background: #ff9900;
+.product p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
 }
