@@ -39,8 +39,7 @@ body {
 /* Hero obrázok */
 .hero-container {
     position: relative;
-    height: 480px; /* Nastavenie správnej výšky */
-
+    height: 50vh; /* Nastavenie na 50 % výšky obrazovky */
     overflow: hidden;
 }
 
@@ -50,24 +49,37 @@ body {
     object-fit: cover;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-   
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+/* Biely pás s textom */
+.hero-text-bar {
+    background-color: white;
     text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Produkty na úvodnej stránke */
+.hero-text-bar p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Produkty */
+.products {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: green;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 30px; /* Medzera medzi produktami */
 }
 
 .product {
@@ -85,60 +97,11 @@ body {
 }
 
 .product:hover {
-    transform: scale(1.05); /* Zvýraznenie */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Jemný tieň */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-title {
     font-weight: bold;
     color: green;
 }
-
-/* Sekcia položiek na detailnej stránke */
-.related-items {
-    margin: 20px;
-    text-align: center;
-}
-
-.item-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.item {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.price {
-    font-size: 16px;
-    font-weight: bold;
-    color: green;
-    margin: 10px 0;
-}
-
-.add-to-cart {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: #45a049;
-}
-
