@@ -153,3 +153,77 @@ input[type="number"] {
     text-align: center;
     margin: 10px 0;
 }
+/* Košík */
+.cart {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+    text-align: center;
+    color: green;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #45a049;
+}
+
+.cart-summary {
+    text-align: center;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
