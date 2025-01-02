@@ -1,5 +1,10 @@
-// Pole na ukladanie položiek v košíku
-let cart = [];
+// Inicializácia košíka
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Funkcia na uloženie do localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 // Pridanie položky do košíka
 function addToCart(name, price) {
@@ -9,35 +14,41 @@ function addToCart(name, price) {
     } else {
         cart.push({ name, price, quantity: 1 });
     }
-    console.log(cart); // Skontrolujte, či sa položka pridáva do poľa
-    renderCart();
+    saveCart();
+    alert(`${name} bol pridaný do košíka.`);
+    renderCart(); // Voliteľné, ak je na stránke košíka
 }
 
-// Funkcia na zobrazenie košíka (ak je košík zobrazený na aktuálnej stránke)
+// Zobrazenie košíka na stránke
 function renderCart() {
     const cartItemsContainer = document.querySelector('.cart-items');
-    if (!cartItemsContainer) return; // Ak nie je kontajner na košík, ukonči funkciu
+    const totalPriceElement = document.getElementById('total-price');
+    if (!cartItemsContainer || !totalPriceElement) return; // Ak nie sme na stránke košíka, ukonči funkciu
 
     cartItemsContainer.innerHTML = '';
     let total = 0;
 
     cart.forEach(item => {
         const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
         itemDiv.innerHTML = `
             <h3>${item.name}</h3>
-            <p>${item.price} EUR</p>
-            <p>Množstvo: ${item.quantity}</p>
+            <p>Cena za kus: ${item.price.toFixed(2)} EUR</p>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('${item.name}', -1)">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="updateQuantity('${item.name}', 1)">+</button>
+            </div>
+            <p>Medzisúčet: ${(item.price * item.quantity).toFixed(2)} EUR</p>
         `;
         cartItemsContainer.appendChild(itemDiv);
         total += item.price * item.quantity;
     });
 
-    document.getElementById('total-price').textContent = `${total.toFixed(2)} EUR`;
+    totalPriceElement.textContent = `${total.toFixed(2)} EUR`;
 }
 
-}
-
-// Funkcia na aktualizáciu množstva položky
+// Aktualizácia množstva položky
 function updateQuantity(name, change) {
     const item = cart.find(i => i.name === name);
     if (item) {
@@ -46,19 +57,9 @@ function updateQuantity(name, change) {
             cart = cart.filter(i => i.name !== name);
         }
     }
+    saveCart();
     renderCart();
 }
 
-// Pridať udalosť pre načítanie stránky
+// Pri načítaní stránky renderuj košík
 document.addEventListener('DOMContentLoaded', renderCart);
-function addToCart(name, price) {
-    console.log(`Pridávam do košíka: ${name} - ${price} EUR`);
-    const existingItem = cart.find(item => item.name === name);
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({ name, price, quantity: 1 });
-    }
-    console.log("Aktuálny obsah košíka:", cart);
-    renderCart();
-}
