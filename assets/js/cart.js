@@ -1,7 +1,7 @@
 // Inicializácia košíka
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Funkcia na uloženie do localStorage
+// Funkcia na uloženie košíka do localStorage
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -16,7 +16,7 @@ function addToCart(name, price) {
     }
     saveCart();
     alert(`${name} bol pridaný do košíka.`);
-    renderCart(); // Voliteľné, ak je na stránke košíka
+    renderCart();
 }
 
 // Zobrazenie košíka na stránke
@@ -61,5 +61,15 @@ function updateQuantity(name, change) {
     renderCart();
 }
 
-// Pri načítaní stránky renderuj košík
-document.addEventListener('DOMContentLoaded', renderCart);
+// Event listener pre tlačidlá "Pridať do košíka"
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+            addToCart(name, price);
+        });
+    });
+
+    renderCart(); // Renderovanie košíka pri načítaní stránky (ak existuje)
+});
