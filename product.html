@@ -19,51 +19,63 @@
 
     <!-- Sekcia položiek -->
     <section class="related-items">
-        <h2>Ďalšie položky</h2>
-        <div class="item-grid">
-            <div class="item">
-                <h3>Položka 1</h3>
-                <img src="assets/images/bamboo.jpg" alt="Položka 1">
-                <p class="price">10.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
-            <div class="item">
-                <h3>Položka 2</h3>
-                <img src="assets/images/bottles.jpg" alt="Položka 2">
-                <p class="price">15.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
-            <div class="item">
-                <h3>Položka 3</h3>
-                <img src="assets/images/toys.jpg" alt="Položka 3">
-                <p class="price">20.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
-            <div class="item">
-                <h3>Položka 4</h3>
-                <img src="assets/images/wax.jpg" alt="Položka 4">
-                <p class="price">25.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
-            <div class="item">
-                <h3>Položka 5</h3>
-                <img src="assets/images/bamboo.jpg" alt="Položka 5">
-                <p class="price">30.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
-            <div class="item">
-                <h3>Položka 6</h3>
-                <img src="assets/images/bottles.jpg" alt="Položka 6">
-                <p class="price">35.00 EUR</p>
-                <input type="number" min="1" value="1">
-                <button class="add-to-cart">Pridať do košíka</button>
-            </div>
+        <h2 id="product-name">Detail produktu</h2>
+        <div id="item-grid" class="item-grid">
+            <!-- Dynamický obsah položiek -->
         </div>
     </section>
+
+    <script>
+        // Načítanie parametra z URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('product');
+
+        // Definovanie produktov a ich položiek
+        const productDetails = {
+            bamboo: {
+                name: 'Bambusové produkty',
+                startIndex: 1,
+                endIndex: 6
+            },
+            bottles: {
+                name: 'Sklenené fľaše',
+                startIndex: 7,
+                endIndex: 12
+            },
+            toys: {
+                name: 'Drevené hračky',
+                startIndex: 13,
+                endIndex: 18
+            },
+            beeswax: {
+                name: 'Výrobky z včelieho vosku',
+                startIndex: 19,
+                endIndex: 24
+            }
+        };
+
+        // Zobrazenie detailu produktu
+        if (product && productDetails[product]) {
+            const details = productDetails[product];
+            document.getElementById('product-name').innerText = details.name;
+
+            const itemGrid = document.getElementById('item-grid');
+            for (let i = details.startIndex; i <= details.endIndex; i++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.innerHTML = `
+                    <h3>Položka ${i}</h3>
+                    <img src="assets/images/${i}.jpg" alt="Položka ${i}">
+                    <p class="price">${10 * i}.00 EUR</p>
+                    <input type="number" min="1" value="1">
+                    <button class="add-to-cart">Pridať do košíka</button>
+                `;
+                itemGrid.appendChild(itemDiv);
+            }
+        } else {
+            document.getElementById('product-name').innerText = 'Produkt nenájdený';
+        }
+    </script>
 </body>
 </html>
