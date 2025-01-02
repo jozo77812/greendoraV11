@@ -36,7 +36,7 @@ body {
 /* Hero obrázok */
 .hero-container {
     position: relative;
-    height: 50vh; /* Mierne zväčšenie výšky hero obrázku */
+    height: relative; /* Mierne zväčšenie výšky hero obrázku */
     overflow: hidden;
 }
 
