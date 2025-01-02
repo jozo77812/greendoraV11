@@ -51,3 +51,14 @@ function updateQuantity(name, change) {
 
 // Pridať udalosť pre načítanie stránky
 document.addEventListener('DOMContentLoaded', renderCart);
+function addToCart(name, price) {
+    console.log(`Pridávam do košíka: ${name} - ${price} EUR`);
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+    console.log("Aktuálny obsah košíka:", cart);
+    renderCart();
+}
