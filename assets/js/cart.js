@@ -1,11 +1,15 @@
-// Príklady položiek v košíku (môžete nahradiť dynamickým pridaním)
-let cart = [
-    { id: 1, name: "Položka 1", price: 10.00, quantity: 1 },
-    { id: 2, name: "Položka 2", price: 20.00, quantity: 2 },
-    { id: 3, name: "Položka 3", price: 30.00, quantity: 1 },
-];
+let cart = [];
 
-// Funkcia na vykreslenie košíka
+function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+    renderCart();
+}
+
 function renderCart() {
     const cartItemsContainer = document.querySelector('.cart-items');
     const totalPriceElement = document.getElementById('total-price');
@@ -19,9 +23,9 @@ function renderCart() {
             <h3>${item.name}</h3>
             <p>Cena: ${item.price.toFixed(2)} EUR</p>
             <div class="quantity-controls">
-                <button class="decrease-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                <button class="decrease-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
                 <span>${item.quantity}</span>
-                <button class="increase-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                <button class="increase-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
             </div>
             <p>Medzisúčet: ${(item.price * item.quantity).toFixed(2)} EUR</p>
         `;
@@ -32,17 +36,15 @@ function renderCart() {
     totalPriceElement.textContent = `${total.toFixed(2)} EUR`;
 }
 
-// Funkcia na aktualizáciu množstva položiek
-function updateQuantity(itemId, change) {
-    const item = cart.find(i => i.id === itemId);
+function updateQuantity(name, change) {
+    const item = cart.find(i => i.name === name);
     if (item) {
         item.quantity += change;
         if (item.quantity < 1) {
-            cart = cart.filter(i => i.id !== itemId);
+            cart = cart.filter(i => i.name !== name);
         }
     }
     renderCart();
 }
 
-// Inicializácia
 document.addEventListener('DOMContentLoaded', renderCart);
