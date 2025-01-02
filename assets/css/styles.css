@@ -62,10 +62,10 @@ body {
     margin: 0;
     font-size: 14px;
     color: #333;
-    white-space: nowrap;
+    white-space: nowrap; /* Text na jednom riadku */
 }
 
-/* Produkty */
+/* Produkty na hlavnej stránke */
 .products {
     padding: 20px;
     background-color: #fff;
@@ -80,9 +80,9 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 produkty vedľa seba */
-    gap: 30px; /* 3 cm medzera medzi produktmi */
+    gap: 30px; /* Medzera medzi produktmi */
     max-width: 1200px; /* Šírka kontajnera pre produkty */
-    margin: 0 auto; /* Zarovnanie na stred */
+    margin: 0 auto; /* Centrovanie */
 }
 
 .product {
@@ -100,11 +100,67 @@ body {
 }
 
 .product:hover {
-    transform: scale(1.05); /* Zvýraznenie pri hover */
+    transform: scale(1.05); /* Zvýraznenie */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-title {
     font-weight: bold;
     color: green;
+}
+
+/* Položky v detaile produktu */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 položky vedľa seba */
+    gap: 30px; /* Medzera medzi položkami */
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.item {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+input[type="number"] {
+    width: 50px;
+    text-align: center;
+    margin: 10px 0;
 }
