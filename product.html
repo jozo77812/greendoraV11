@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail produktu</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>GreenDora</h1>
+        <nav>
+            <a href="index.html">Domov</a>
+            <a href="contact.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <div class="product-detail">
+        <h2 id="product-name">Názov produktu</h2>
+        <img id="product-image" src="assets/images/default.jpg" alt="Produkt" class="product-image">
+        <p id="product-price" class="product-price">Cena: 20 EUR</p>
+        <p id="product-description">Toto je detail produktu.</p>
+        <label for="quantity">Množstvo:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button id="add-to-cart">Pridať do košíka</button>
+    </div>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('product');
+
+        const productDetails = {
+            bamboo: {
+                name: 'Bambusové produkty',
+                image: 'assets/images/bamboo.jpg',
+                price: '10 EUR',
+                description: 'Ekologické bambusové produkty pre každodenné použitie.'
+            },
+            bottles: {
+                name: 'Sklenené fľaše',
+                image: 'assets/images/bottles.jpg',
+                price: '15 EUR',
+                description: 'Štýlové sklenené fľaše na vodu a nápoje.'
+            },
+            toys: {
+                name: 'Drevené hračky',
+                image: 'assets/images/toys.jpg',
+                price: '25 EUR',
+                description: 'Bezpečné a ekologické drevené hračky pre deti.'
+            },
+            beeswax: {
+                name: 'Výrobky z včelieho vosku',
+                image: 'assets/images/beeswax.jpg',
+                price: '20 EUR',
+                description: 'Prírodné výrobky z včelieho vosku.'
+            }
+        };
+
+        if (product && productDetails[product]) {
+            const details = productDetails[product];
+            document.getElementById('product-name').innerText = details.name;
+            document.getElementById('product-image').src = details.image;
+            document.getElementById('product-price').innerText = `Cena: ${details.price}`;
+            document.getElementById('product-description').innerText = details.description;
+        }
+    </script>
+</body>
+</html>
