@@ -7,91 +7,57 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- Horný pás -->
     <header class="header">
         <h1>GreenDora</h1>
         <nav>
             <a href="index.html">Domov</a>
             <a href="contact.html">Kontakt</a>
+            <a href="about.html">O nás</a>
         </nav>
     </header>
-
-    <div class="product-detail">
-        <h2 id="product-name">Názov produktu</h2>
-        <p id="product-description">Popis produktu sa zobrazí tu.</p>
-        <p id="product-price" class="product-price">Cena: 20 EUR</p>
-    </div>
 
     <!-- Sekcia položiek -->
     <section class="related-items">
         <h2>Ďalšie položky</h2>
         <div class="item-grid">
             <div class="item">
-                <h3>Položka 1</h3>
+                <img src="assets/images/bamboo.jpg" alt="Položka 1">
                 <p class="price">10.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
             <div class="item">
-                <h3>Položka 2</h3>
+                <img src="assets/images/bottles.jpg" alt="Položka 2">
                 <p class="price">15.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
             <div class="item">
-                <h3>Položka 3</h3>
+                <img src="assets/images/toys.jpg" alt="Položka 3">
                 <p class="price">20.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
             <div class="item">
-                <h3>Položka 4</h3>
+                <img src="assets/images/wax.jpg" alt="Položka 4">
                 <p class="price">25.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
             <div class="item">
-                <h3>Položka 5</h3>
+                <img src="assets/images/bamboo.jpg" alt="Položka 5">
                 <p class="price">30.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
             <div class="item">
-                <h3>Položka 6</h3>
+                <img src="assets/images/bottles.jpg" alt="Položka 6">
                 <p class="price">35.00 EUR</p>
+                <input type="number" min="1" value="1">
                 <button class="add-to-cart">Pridať do košíka</button>
             </div>
         </div>
     </section>
-
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const product = urlParams.get('product');
-
-        const productDetails = {
-            bamboo: {
-                name: 'Bambusové produkty',
-                description: 'Ekologické bambusové produkty pre každodenné použitie.',
-                price: '20 EUR'
-            },
-            bottles: {
-                name: 'Sklenené fľaše',
-                description: 'Štýlové sklenené fľaše na vodu a nápoje.',
-                price: '25 EUR'
-            },
-            toys: {
-                name: 'Drevené hračky',
-                description: 'Bezpečné a ekologické drevené hračky pre deti.',
-                price: '30 EUR'
-            },
-            beeswax: {
-                name: 'Výrobky z včelieho vosku',
-                description: 'Prírodné výrobky z včelieho vosku.',
-                price: '15 EUR'
-            }
-        };
-
-        if (product && productDetails[product]) {
-            const details = productDetails[product];
-            document.getElementById('product-name').innerText = details.name;
-            document.getElementById('product-description').innerText = details.description;
-            document.getElementById('product-price').innerText = `Cena: ${details.price}`;
-        }
-    </script>
 </body>
 </html>
