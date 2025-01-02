@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Shop</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <span>Kontakt</span>
-        </div>
+    <header class="header sticky-header">
+        <div class="logo">Eco Shop</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Domov</a></li>
+                <li><a href="#products">Produkty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
-    <main class="main">
-        <section class="hero">
-            <img src="assets/images/hero.jpg" alt="Hero Image">
+    
+    <main>
+        <!-- Banner -->
+        <section id="home" class="hero-section">
+            <img src="assets/images/hero.jpg" alt="Eco Friendly Scenery">
+            <div class="hero-text">
+                <h1>Udržateľné riešenia pre váš život</h1>
+                <p>Objavte naše ekologické produkty</p>
+            </div>
         </section>
-        <section class="products">
-            <div class="product">Bambusové výrobky</div>
-            <div class="product">Sklenené fľaše</div>
-            <div class="product">Drevené hračky</div>
-            <div class="product">Výrobky z včelieho vosku</div>
+
+        <!-- Produkty -->
+        <section id="products" class="products-section">
+            <h2>Naše Produkty</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="assets/images/bamboo.jpg" alt="Bambusové výrobky">
+                    <p>Bambusové výrobky</p>
+                </div>
+                <div class="product">
+                    <img src="assets/images/bottles.jpg" alt="Sklenené fľaše">
+                    <p>Sklenené fľaše</p>
+                </div>
+                <div class="product">
+                    <img src="assets/images/toys.jpg" alt="Drevené hračky">
+                    <p>Drevené hračky</p>
+                </div>
+                <div class="product">
+                    <img src="assets/images/wax.jpg" alt="Výrobky z včelieho vosku">
+                    <p>Výrobky z včelieho vosku</p>
+                </div>
+            </div>
         </section>
     </main>
 </body>
