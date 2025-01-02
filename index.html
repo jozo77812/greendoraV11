@@ -4,53 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Shop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header class="header sticky-header">
+    <!-- Sticky Header -->
+    <header class="sticky-header">
         <div class="logo">Eco Shop</div>
         <nav>
-            <ul class="menu">
-                <li><a href="#home">Domov</a></li>
-                <li><a href="#products">Produkty</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
+            <a href="#home">Domov</a>
+            <a href="#products">Produkty</a>
+            <a href="#contact">Kontakt</a>
         </nav>
     </header>
-    
-    <main>
-        <!-- Banner -->
-        <section id="home" class="hero-section">
-            <img src="assets/images/hero.jpg" alt="Eco Friendly Scenery">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-banner">
+            <img src="assets/images/hero.jpg" alt="Hero Image">
             <div class="hero-text">
                 <h1>Udržateľné riešenia pre váš život</h1>
                 <p>Objavte naše ekologické produkty</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Produkty -->
-        <section id="products" class="products-section">
-            <h2>Naše Produkty</h2>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="assets/images/bamboo.jpg" alt="Bambusové výrobky">
-                    <p>Bambusové výrobky</p>
-                </div>
-                <div class="product">
-                    <img src="assets/images/bottles.jpg" alt="Sklenené fľaše">
-                    <p>Sklenené fľaše</p>
-                </div>
-                <div class="product">
-                    <img src="assets/images/toys.jpg" alt="Drevené hračky">
-                    <p>Drevené hračky</p>
-                </div>
-                <div class="product">
-                    <img src="assets/images/wax.jpg" alt="Výrobky z včelieho vosku">
-                    <p>Výrobky z včelieho vosku</p>
-                </div>
+    <!-- Product Section -->
+    <section id="products" class="products-section">
+        <h2>Naše Produkty</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="assets/images/bamboo.jpg" alt="Bambusové výrobky">
+                <p>Bambusové výrobky</p>
             </div>
-        </section>
-    </main>
+            <div class="product">
+                <img src="assets/images/bottles.jpg" alt="Sklenené fľaše">
+                <p>Sklenené fľaše</p>
+            </div>
+            <div class="product">
+                <img src="assets/images/toys.jpg" alt="Drevené hračky">
+                <p>Drevené hračky</p>
+            </div>
+            <div class="product">
+                <img src="assets/images/wax.jpg" alt="Výrobky z včelieho vosku">
+                <p>Výrobky z včelieho vosku</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <h2>Prihláste sa na odber</h2>
+        <p>Získajte exkluzívne zľavy a novinky o našich produktoch</p>
+        <form>
+            <input type="email" placeholder="Zadajte váš email">
+            <button type="submit">Prihlásiť sa</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Kontaktujte nás na email: info@ecoshop.sk</p>
+    </footer>
 </body>
 </html>
