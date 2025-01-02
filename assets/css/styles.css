@@ -1,44 +1,47 @@
-/* Global Styles */
+/* Globálny štýl */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-.sticky-header {
+/* Horný pás */
+.header {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-.sticky-header .logo {
-    font-weight: bold;
+.header h1 {
+    margin: 0;
     color: green;
 }
 
-.sticky-header nav a {
-    margin: 0 10px;
+.header nav a {
     text-decoration: none;
-    color: black;
+    color: #333;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-.hero-banner {
+.header nav a:hover {
+    color: green;
+}
+
+/* Hero obrázok */
+.hero {
     position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
+    text-align: center;
 }
 
-.hero-banner img {
+.hero img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -47,55 +50,67 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
 
-.product-grid {
+/* Filter */
+.filter-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: darkgreen;
+}
+
+/* Produkty */
+.products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
 }
 
 .product {
     background: white;
-    border: 1px solid #ddd;
+    padding: 15px;
     border-radius: 10px;
-    overflow: hidden;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.newsletter-section {
-    text-align: center;
-    padding: 40px;
-    background: #f9f9f9;
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
-.newsletter-section form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.wishlist-btn {
+    padding: 10px;
+    margin-top: 10px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.wishlist-btn:hover {
+    background: #ff9900;
 }
