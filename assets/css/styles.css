@@ -1,22 +1,5 @@
 /* Globálny štýl */
 body {
-margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.hero-background {
-    position: fixed; /* Hero obrázok je pevne prichytený k obrazovke */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Pokrýva celú šírku obrazovky */
-    height: 100vh; /* Pokrýva celú výšku obrazovky */
-    z-index: -1; /* Umiestnené na pozadí */
-    background-image: url('assets/images/your-hero-image.jpg'); /* Cesta k vášmu obrázku */
-    background-size: cover; /* Obrázok sa prispôsobí na pokrytie celej oblasti */
-    background-position: center; /* Umiestnenie obrázku na stred */
-    background-repeat: no-repeat; /* Bez opakovania obrázku */
-}
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -56,7 +39,7 @@ margin: 0;
 /* Hero obrázok */
 .hero-container {
     position: relative;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
 }
 
@@ -92,11 +75,6 @@ margin: 0;
 }
 
 .product {
-background-color: rgba(255, 255, 255, 0.8); /* Biele pozadie s priehľadnosťou */
-    padding: 20px;
-    border-radius: 10px; /* Jemné zaoblenie */
-    margin: 20px;
-}
     background: white;
     padding: 15px;
     border-radius: 10px;
