@@ -38,7 +38,8 @@ body {
 
 /* Hero obrázok */
 .hero-container {
-    position: centre;
+    justify-content: center; /* Horizontálne vystredenie */
+    align-items: center;    /* Vertikálne vystredenie */
     height: 70vh;
     overflow: hidden;
 }
