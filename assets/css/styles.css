@@ -1,78 +1,62 @@
-/* Globálne štýly */
-body, html {
+/* Globálny štýl */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Horný pás */
-.header {
+header {
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header .logo {
+header .logo {
     font-size: 24px;
     color: green;
     font-weight: bold;
 }
 
-.header nav a {
+header nav a {
     text-decoration: none;
     color: #333;
     margin: 0 15px;
     font-weight: bold;
 }
 
-.header nav a:hover {
+header nav a:hover {
     color: green;
 }
 
-/* Hero sekcia */
+/* Hero obrázok */
 .hero-container {
-    background-image: url('../images/hero.jpg'); /* Cesta k hero obrázku */
+    height: 100vh;
+    background-image: url('assets/images/hero.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; /* Celá výška obrazovky */
-    position: relative;
-    z-index: -1; /* Uloženie na pozadie */
-}
-
-/* Biely pás s textom */
-.hero-text-bar {
-    background-color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: -50px; /* Zmenši medzeru medzi hero obrázkom a textom */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero-text-bar p {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
 }
 
 /* Produkty */
-.product-grid {
+.products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
+    margin: -20% auto 0;
+    position: relative;
+    z-index: 1;
 }
 
-.product {
+.product-card {
     background: white;
     padding: 15px;
     border-radius: 10px;
@@ -80,37 +64,18 @@ body, html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product img {
+.product-card img {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.product:hover {
+.product-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.product-title {
+.product-name {
     font-weight: bold;
     color: green;
-}
-
-.product-price {
-    color: green;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.add-to-cart {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: #45a049;
 }
