@@ -1,18 +1,8 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     background: url('assets/images/hero.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
-}
-
-.hero-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
 }
 
 header {
@@ -25,24 +15,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #666;
+.hero {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 20px;
 }
 
 .products {
@@ -54,9 +33,10 @@ header a {
 
 .product-card {
     background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    text-align: center;
     border: 1px solid #ddd;
     border-radius: 10px;
-    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -66,15 +46,6 @@ header a {
 }
 
 .product-card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-.product-card .product-name {
-    font-weight: bold;
-}
-
-.product-card .product-price {
-    color: green;
 }
