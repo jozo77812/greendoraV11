@@ -3,52 +3,128 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
     color: #333;
+}
+
+/* Horná časť */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    color: green;
 }
 
 /* Hero obrázok */
 .hero {
+    position: relative;
     width: 100%;
     height: 100vh;
     background: url('assets/images/hero.jpg') no-repeat center center/cover;
 }
 
-/* Produkty (4 vedľa seba) */
+/* Produkty */
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: -20% auto 0;
+    z-index: 1;
+    position: relative;
 }
 
-/* Produkty - vzhľad */
+.product {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .product img {
     max-width: 100%;
     border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-title {
     font-weight: bold;
     color: green;
-    text-align: center;
 }
 
-/* Položky v detaile produktu (3 vedľa seba) */
+/* Položky (v detaile produktu) */
 .item-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
     margin: 20px auto;
+    max-width: 1200px;
 }
 
 .item {
-    background: white;
+    background-color: white;
     padding: 15px;
     text-align: center;
+    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
 }
