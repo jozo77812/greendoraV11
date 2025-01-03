@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <title>Eco Shop</title>
+    <title>GreenDora</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Eco Shop</div>
+    <!-- Horný pás -->
+    <header class="header">
+        <h1>GreenDora</h1>
         <nav>
-            <a href="#">Domov</a>
-            <a href="#">Produkty</a>
-            <a href="#">Kontakt</a>
-            <a href="#">Košík</a>
+            <a href="index.html">Domov</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="cart.html">Košík</a>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero sekcia -->
-        <section class="hero">
-            <h1>Udržateľné riešenia pre váš život</h1>
-            <p>Objavte naše ekologické produkty</p>
-        </section>
+    <!-- Hero obrázok -->
+    <section class="hero">
+        <div class="hero-container">
+            <img src="assets/images/hero.jpg" alt="Hero obrázok">
+        </div>
+    </section>
 
-        <!-- Produkty -->
-        <section class="products">
-            <div class="product-card">
-                <img src="assets/images/product1.jpg" alt="Produkt 1">
-                <div class="product-name">Produkt 1</div>
-                <div class="product-price">10.00€</div>
-                <button class="add-to-cart" onclick="addToCart('Produkt 1', 10.00)">Pridať do košíka</button>
+    <!-- Biely pás s textom -->
+    <section class="hero-text-bar">
+        <p>Udržateľné riešenia pre váš život - Objavte naše ekologické produkty</p>
+    </section>
+
+    <!-- Sekcia produktov -->
+    <section class="products">
+        <h2 class="section-title">Naše produkty</h2>
+        <div class="product-grid">
+            <div class="product">
+                <a href="product.html?product=bamboo">
+                    <img src="assets/images/bamboo.jpg" alt="Bambusové produkty">
+                    <h3 class="product-title">Bambusové produkty</h3>
+                </a>
             </div>
-            <div class="product-card">
-                <img src="assets/images/product2.jpg" alt="Produkt 2">
-                <div class="product-name">Produkt 2</div>
-                <div class="product-price">15.00€</div>
-                <button class="add-to-cart" onclick="addToCart('Produkt 2', 15.00)">Pridať do košíka</button>
+            <div class="product">
+                <a href="product.html?product=bottles">
+                    <img src="assets/images/bottles.jpg" alt="Sklenené fľaše">
+                    <h3 class="product-title">Sklenené fľaše</h3>
+                </a>
             </div>
-            <div class="product-card">
-                <img src="assets/images/product3.jpg" alt="Produkt 3">
-                <div class="product-name">Produkt 3</div>
-                <div class="product-price">20.00€</div>
-                <button class="add-to-cart" onclick="addToCart('Produkt 3', 20.00)">Pridať do košíka</button>
+            <div class="product">
+                <a href="product.html?product=toys">
+                    <img src="assets/images/toys.jpg" alt="Drevené hračky">
+                    <h3 class="product-title">Drevené hračky</h3>
+                </a>
             </div>
-            <div class="product-card">
-                <img src="assets/images/product4.jpg" alt="Produkt 4">
-                <div class="product-name">Produkt 4</div>
-                <div class="product-price">25.00€</div>
-                <button class="add-to-cart" onclick="addToCart('Produkt 4', 25.00)">Pridať do košíka</button>
+            <div class="product">
+                <a href="product.html?product=beeswax">
+                    <img src="assets/images/wax.jpg" alt="Výrobky z včelieho vosku">
+                    <h3 class="product-title">Výrobky z včelieho vosku</h3>
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 </body>
 </html>
