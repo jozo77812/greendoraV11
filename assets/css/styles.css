@@ -6,6 +6,15 @@ body {
     color: #333;
 }
 
+.hero-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
 header {
     background-color: rgba(255, 255, 255, 0.9);
     position: sticky;
@@ -26,26 +35,13 @@ header a {
     font-weight: bold;
 }
 
-.hero {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.6);
-    margin: 0;
-    padding: 20px;
-}
-
 .hero h1 {
     font-size: 2.5rem;
-    margin: 0;
     color: #333;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin: 10px 0 0;
     color: #666;
 }
 
@@ -53,14 +49,13 @@ header a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
-    padding: 40px;
+    padding: 20px;
 }
 
 .product-card {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddd;
     border-radius: 10px;
-    overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -72,31 +67,14 @@ header a {
 
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    border-bottom: 1px solid #ddd;
 }
 
 .product-card .product-name {
     font-weight: bold;
-    padding: 10px 0;
 }
 
 .product-card .product-price {
     color: green;
-    margin-bottom: 10px;
-}
-
-.product-card button {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.product-card button:hover {
-    background-color: darkgreen;
 }
