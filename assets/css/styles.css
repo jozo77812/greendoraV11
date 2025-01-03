@@ -7,78 +7,48 @@ body {
     color: #333;
 }
 
-/* Horný pás */
-.header {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: green;
-}
-
-.header nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-.header nav a:hover {
-    color: green;
-}
-
 /* Hero obrázok */
 .hero {
-    position: relative;
     width: 100%;
-    height: 100vh; /* Na celej výške */
-    background: url('assets/images/hero.jpg') no-repeat center center/cover; /* Hero obrázok */
-    z-index: -1;
+    height: 100vh;
+    background: url('assets/images/hero.jpg') no-repeat center center/cover;
 }
 
-/* Produkty v mriežke */
+/* Produkty (4 vedľa seba) */
 .products {
-    position: relative;
-    top: 20%; /* Presunutie produktov bližšie k vrchu */
-    max-width: 1200px; /* Maximálna šírka produktovej sekcie */
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 produkty vedľa seba */
-    gap: 30px; /* Medzery medzi produktmi */
-    padding: 20px; /* Odstup od okrajov */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Produkty - vzhľad */
-.product {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .product img {
-    max-width: 100%; /* Obrázky produktov v rámci boxu */
+    max-width: 100%;
     border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efekt pri hover */
 }
 
 .product-title {
     font-weight: bold;
     color: green;
+    text-align: center;
+}
+
+/* Položky v detaile produktu (3 vedľa seba) */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.item {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
