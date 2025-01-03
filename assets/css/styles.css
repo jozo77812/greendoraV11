@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center; /* Horizontálne vystredenie */
     align-items: center;    /* Vertikálne vystredenie */
-    height: 100vh;          /* Výška na celú obrazovku */
+    height: 70vh;          /* Výška na celú obrazovku */
     overflow: hidden;       /* Skryj nadbytočné časti obrázku */
     background-color: #f4f4f4; /* Voliteľná farba pozadia */
 }
