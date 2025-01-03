@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/script.js" defer></script>
     <title>Eco Shop</title>
 </head>
 <body>
-    <!-- Horný pás -->
-    <header class="header">
+    <header>
         <div class="logo">Eco Shop</div>
         <nav>
             <a href="#">Domov</a>
@@ -19,33 +17,27 @@
         </nav>
     </header>
 
-    <!-- Hero sekcia -->
-    <div class="hero-container">
-        <!-- Hero obrázok bude celé pozadie -->
-    </div>
-
-    <!-- Obsah stránky -->
     <main>
-        <!-- Text pod hero obrázkom -->
-        <section class="hero-text-bar">
-            <p>Udržateľné riešenia pre váš život • Objavte naše ekologické produkty</p>
-        </section>
+        <!-- Hero Section -->
+        <div class="hero-container"></div>
 
         <!-- Produkty -->
         <section class="products">
-            <div class="product-grid">
-                <div class="product">
-                    <img src="assets/images/product1.jpg" alt="Produkt 1">
-                    <h3 class="product-title">Produkt 1</h3>
-                    <p class="product-price">10.00€</p>
-                    <button class="add-to-cart" onclick="addToCart('Produkt 1', 10.00)">Pridať do košíka</button>
-                </div>
-                <div class="product">
-                    <img src="assets/images/product2.jpg" alt="Produkt 2">
-                    <h3 class="product-title">Produkt 2</h3>
-                    <p class="product-price">15.00€</p>
-                    <button class="add-to-cart" onclick="addToCart('Produkt 2', 15.00)">Pridať do košíka</button>
-                </div>
+            <div class="product-card">
+                <img src="assets/images/product1.jpg" alt="Produkt 1">
+                <div class="product-name">Produkt 1</div>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/product2.jpg" alt="Produkt 2">
+                <div class="product-name">Produkt 2</div>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/product3.jpg" alt="Produkt 3">
+                <div class="product-name">Produkt 3</div>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/product4.jpg" alt="Produkt 4">
+                <div class="product-name">Produkt 4</div>
             </div>
         </section>
     </main>
