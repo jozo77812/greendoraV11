@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenDora</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Firebase SDK cez CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
 </head>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCgUPR9YXDu7vNGgHd1rWcFy6gZho3otoM",
-    authDomain: "greendora.firebaseapp.com",
-    projectId: "greendora",
-    storageBucket: "greendora.firebasestorage.app",
-    messagingSenderId: "109936750758",
-    appId: "1:109936750758:web:7c7951d0612267c8094467"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
-
 <body>
     <!-- Horný pás -->
     <header class="header">
@@ -36,16 +17,13 @@
         <nav>
             <a href="index.html">Domov</a>
             <a href="contact.html">Kontakt</a>
-            <a href="cart.html">Košík</a>
         </nav>
     </header>
 
     <!-- Hero obrázok -->
-    <section class="hero">
-        <div class="hero-container">
-            <img src="assets/images/hero.jpg" alt="Hero obrázok">
-        </div>
-    </section>
+    <div class="hero-container">
+        <img src="assets/images/hero.jpg" alt="Hero obrázok">
+    </div>
 
     <!-- Biely pás s textom -->
     <section class="hero-text-bar">
@@ -82,5 +60,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Inicializácia Firebase -->
+    <script>
+        // Firebase konfigurácia
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgUPR9YXDu7vNGgHd1rWcFy6gZho3otoM",
+            authDomain: "greendora.firebaseapp.com",
+            projectId: "greendora",
+            storageBucket: "greendora.firebasestorage.app",
+            messagingSenderId: "109936750758",
+            appId: "1:109936750758:web:7c7951d0612267c8094467"
+        };
+
+        // Inicializácia Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        console.log("Firebase úspešne inicializované!");
+    </script>
 </body>
 </html>
