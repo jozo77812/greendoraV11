@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Košík</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
 </head>
 <body>
-    <header class="header">
-        <h1>GreenDora</h1>
-        <nav>
-            <a href="index.html">Domov</a>
-            <a href="contact.html">Kontakt</a>
-            <a href="cart.html">Košík</a>
-        </nav>
-    </header>
+    <h1>Váš Košík</h1>
+    <div id="cart-items"></div>
+    <script>
+        // Firebase konfigurácia
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "your-app.firebaseapp.com",
+            projectId: "your-project-id",
+            storageBucket: "your-app.appspot.com",
+            messagingSenderId: "your-messaging-sender-id",
+            appId: "your-app-id"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
-    <section class="cart">
-        <h2>Váš košík</h2>
-        <div class="cart-items">
-            <!-- Položky sa vykreslia dynamicky -->
-        </div>
-        <div class="cart-summary">
-            <p>Celková suma: <span id="total-price">0.00 EUR</span></p>
-        </div>
-    </section>
-
-    <script src="assets/js/cart.js"></script>
+        // Načítanie položiek z Firestore
+        const cartItemsContainer = document.getElementById("cart-items");
+        db.collection("cart").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const item = doc.data();
+                const div = document.createElement("div");
+                div.textContent = `${item.name} - ${item.price}€ - Množstvo: ${item.quantity}`;
+                cartItemsContainer.appendChild(div);
+            });
+        }).catch((error) => {
+            console.error("Chyba pri načítaní košíka: ", error);
+        });
+    </script>
 </body>
 </html>
