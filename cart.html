@@ -27,5 +27,17 @@
     </section>
 
     <script src="assets/js/cart.js"></script>
+<script>
+    // Testovací zápis do Firestore
+    db.collection("test").add({
+        testField: "Testovací zápis"
+    }).then((docRef) => {
+        console.log("Dokument bol pridaný s ID: ", docRef.id);
+    }).catch((error) => {
+        console.error("Chyba pri zápise do Firestore: ", error);
+    });
+</script>
+
+
 </body>
 </html>
