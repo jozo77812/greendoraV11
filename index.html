@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenDora E-shop</title>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <h1>GreenDora E-shop</h1>
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCgUPR9YXDu7vNGgHd1rWcFy6gZho3otoM",
-    authDomain: "greendora.firebaseapp.com",
-    projectId: "greendora",
-    storageBucket: "greendora.firebasestorage.app",
-    messagingSenderId: "109936750758",
-    appId: "1:109936750758:web:7c7951d0612267c8094467"
-  };
+    <!-- Firebase konfigurácia a inicializácia -->
+    <script>
+        // Firebase konfigurácia
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgUPR9YXDu7vNGgHd1rWcFy6gZho3otoM",
+            authDomain: "greendora.firebaseapp.com",
+            projectId: "greendora",
+            storageBucket: "greendora.firebasestorage.app",
+            messagingSenderId: "109936750758",
+            appId: "1:109936750758:web:7c7951d0612267c8094467"
+        };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
+        // Inicializácia Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Príklad pridania údajov do databázy Firestore
+        db.collection("orders").add({
+            productName: "Bambusová kefka",
+            price: 5
+        })
+        .then((docRef) => {
+            console.log("Objednávka pridaná s ID:", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Chyba pri pridávaní objednávky:", error);
+        });
+    </script>
+</body>
+</html>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenDora</title>
